@@ -11,7 +11,10 @@ int main()
   
     const int width = 1200;
     const int height = 800;
-    InitWindow(width, height, "selecton sort");
+
+
+
+    InitWindow(width, height, "selection sort");
     std::vector<int> values(100);
     SetTargetFPS(165);
     for (int i = 0; i <100; i++)
@@ -31,11 +34,14 @@ int main()
     {
         if (!sorted)
         {
-            if (values[j] < values[min_index])
+            if (values[j] < values[min_index] && j<100)
             {
                 min_index = j;
             }
-            j++;
+           
+            
+                j++;
+            
 
             if (j >= 100)
             {
@@ -47,9 +53,10 @@ int main()
             }
 
 
-            if (i > 99)
+            if (i >= 99)
             {
                 sorted = true;
+                
             }
         }
 
@@ -79,6 +86,7 @@ int main()
 
             }
             DrawRectangle(12 * k, 800 - values[k], 10, values[k], color);
+            
       }
         
         EndDrawing();
